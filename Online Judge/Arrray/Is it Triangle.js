@@ -30,7 +30,7 @@ Yes
 
 
 
-//code
+//cod
 
 function check(arr){
         arr.sort((a, b)=>(a-b));
@@ -65,4 +65,5 @@ function check(arr){
           runProgram(read);
           process.exit(0) ;
         });
-      }
+       } 
+ 
