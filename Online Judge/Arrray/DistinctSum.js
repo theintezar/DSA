@@ -55,7 +55,7 @@ function DistinctAgain(n, arr){
         input = input.split("\n");
         var n = +input[0];
         var arr = input[1].split(" ").map(Number);
-        console.log(DistinctAgain(n, arr));
+        console.log(DistinctAgain(n,  arr));
        
       }
  
