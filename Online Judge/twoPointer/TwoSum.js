@@ -4,7 +4,7 @@ Description
 Given a sorted array of integers, return indices of two numbers such that they add up to a target value.
 
 Print -1 -1 if not found.
-
+Masai school
 
 Input
 First line contains T, number of test cases
