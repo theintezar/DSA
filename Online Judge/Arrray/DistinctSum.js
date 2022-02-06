@@ -1,7 +1,7 @@
 Distinct Again Ended
 Description
 
-You are given an  array of N elements. Your task is to write a program that calculates the sum of all distinct elements present in the array.
+You are given an  array of N elements. Your task is to write a program that calculates the sum of all  distinct elements present in the array.
 
 
 Input
