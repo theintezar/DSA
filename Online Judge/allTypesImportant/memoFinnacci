@@ -1,0 +1,38 @@
+// i/p=>5
+// o/p=>5
+
+function fibbo(n,memo){
+    if(memo[n]){
+     return memo[n]   
+    } else{
+        if(n==0) return 0;
+        if(n==1) return 1;
+        memo[n] = fibbo(n-1, memo) + fibbo(n-2, memo); 
+    }
+   return memo[n];
+}
+function runProgram(input) {
+    var n = +input;
+     console.log(fibbo(n,[]))
+   
+  }
+  if (process.env.USERNAME === "prithvi") {
+    runProgram(``);
+  } else {
+    process.stdin.resume();
+    process.stdin.setEncoding("ascii");
+    let read = "";
+    process.stdin.on("data", function (input) {
+      read += input;
+    });
+    process.stdin.on("end", function () {
+      read = read.replace(/\n$/, "");
+      read = read.replace(/\n$/, "");
+      runProgram(read);
+    });
+    process.on("SIGINT", function () {
+      read = read.replace(/\n$/, "");
+      runProgram(read);
+      process.exit(0) ;
+    });
+  }
