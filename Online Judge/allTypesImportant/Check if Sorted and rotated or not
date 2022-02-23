@@ -1,0 +1,82 @@
+Check if Sorted and rotated using binary search -0:56:10
+Description
+
+Given an array of N distinct integers. Check if this array is sorted and rotated counter-clockwise.
+
+A sorted array is not considered as sorted and rotated, i.e., there should be at least one rotation.
+
+
+Input
+Input Format
+
+First line consists of integer N
+
+Second consists of N integers separated by spaces.
+
+Constraints
+
+1 <= N <= 1000
+
+
+Output
+Print "YES" if the array is sorted and rotated at least once else print "NO"
+
+
+Sample Input 1 
+
+6
+3 4 7 9 1 2
+Sample Output 1
+
+YES
+
+
+code
+
+
+function rotatedArr(n, arr){
+    var end=0;
+    for(let i = 0; i<n; i++){
+        if(arr[i]>arr[i+1]){
+            end = i;
+            break;
+        }
+    }
+   
+    if(end === 0) {
+        return "NO"
+    }
+    for(let i = end+1; i<n; i++){
+        if(arr[i]>arr[i+1]){
+            return "NO"
+        }
+    }
+    return "YES"
+}
+function runProgram(input) {
+   input = input.trim().split('\n');
+     var n = +input[0];
+     let arr = input[1].trim().split(" ").map(Number);
+     console.log(rotatedArr(n, arr))
+    
+}
+  if (process.env.USERNAME === "") {
+    runProgram(``);
+  } else {
+    process.stdin.resume();
+    process.stdin.setEncoding("ascii");
+    let read = "";
+    process.stdin.on("data", function (input) {
+      read += input;
+    });
+    process.stdin.on("end", function () {
+      read = read.replace(/\n$/, "");
+      read = read.replace(/\n$/, "");
+      runProgram(read);
+    });
+    process.on("SIGINT", function () {
+      read = read.replace(/\n$/, "");
+      runProgram(read);
+      process.exit(0) ;
+    });
+  }
