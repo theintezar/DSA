@@ -1,0 +1,74 @@
+Sample Input 1 
+
+2
+5 3
+1 2 3 4 5
+5 8
+1 2 3 4 5 
+Sample Output 1
+
+Yes
+No
+Hint
+
+In the sample test case, in the first test case, the value ofN = 5, and that ofK = 3. Upon observation, you can see the pairs with values(2, 5)or(1,4)have a difference of 3. Therefore, the output is Yes.
+
+In the second test case, no pair exists such that the difference between them is 8. Therefore, the output is No.
+
+
+
+
+
+
+
+function DiffSum(n,k,arr){
+  var i = 0;
+  var j = 0;
+  while (i < n && j < n) {
+    var Diff = arr[j] - arr[i];
+    if (Diff == k && i != j) {
+      return "Yes";
+    }
+    if (Diff < k) {
+      j++;
+    } else {
+      i++;
+    }
+  }
+  return "No";
+
+}
+function runProgram(input) {
+  var input=input.split("\n");
+  for(var i=0; i<input.length; i++){
+   input[i]=input[i].trim().split(" ").map(Number);
+    }
+  var test = input[0];
+  var line=1;
+  for(var i=1; i<=test; i++){
+  var [N,K] = input[line++];
+    var arr=input[line++];
+    console.log(DiffSum(N,K,arr));
+  }
+   
+  }
+  if (process.env.USER === "intezar") {
+    runProgram(``);
+  } else {
+    process.stdin.resume();
+    process.stdin.setEncoding("ascii");
+    let read = "";
+    process.stdin.on("data", function (input) {
+      read += input;
+    });
+    process.stdin.on("end", function () {
+      read = read.replace(/\n$/, "");
+      read = read.replace(/\n$/, "");
+      runProgram(read);
+    });
+    process.on("SIGINT", function () {
+      read = read.replace(/\n$/, "");
+      runProgram(read);
+      process.exit(0) ;
+    });
+  }
